@@ -458,9 +458,7 @@ async function takeCommand(message) {
     if (message.includes('hey') || message.includes('hello')|| message.includes('hi')) {
         speak("{Good} Hello Master, How May I Help You?");
     }
-     else {
-        speak("{Good} sorry");
-    }
+     
 }
 
 // Spotify Integration
