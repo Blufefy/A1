@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spark</title>
+    <link rel="shortcut icon" href="giphy.gif" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo-container">
+                <img src="giphy.gif" alt="Spark" class="logo">
+                <h1>Spark</h1>
+            </div>
+            <nav>
+                <button id="showCommandsBtn" class="show-commands-btn" aria-label="Show commands"><i class="fas fa-list"></i></button>
+                <button id="settingsBtn" class="settings-btn" aria-label="Settings"><i class="fas fa-cog"></i></button>
+                <button id="modeToggleBtn" class="mode-toggle-btn" aria-label="Toggle input mode"><i class="fas fa-microphone"></i></button>
+            </nav>
+        </header>
+        <main>
+            <div id="voiceMode">
+                <div class="image-container">
+                    <div class="image" id="micButton">
+                        <img src="giphy.gif" alt="AI Visualization">
+                    </div>
+                </div>
+                <div class="status-container">
+                    <p id="statusText">  Say "Spark" to wake me</p>
+                </div>
+                <div class="input-container">
+                    <div id="contentText" class="content">Click the image or say "Spark" to start</div>
+                </div>
+            </div>
+            <div id="typeMode" style="display: none;">
+                <div class="chat-container" id="chatContainer"></div>
+                <div class="type-container">
+                    <input type="text" id="textInput" class="text-input" placeholder="Type your command here..." aria-label="Type your command">
+                    <button id="sendBtn" class="send-btn" aria-label="Send command"><i class="fas fa-paper-plane"></i></button>
+                    <button id="voiceBtn" class="voice-btn" aria-label="Voice input"><i class="fas fa-microphone"></i></button>
+                </div>
+            </div>
+            <div id="outputContainer" class="output-container"></div>
+        </main>
+        <input type="file" id="musicFolderInput" webkitdirectory directory multiple style="display: none;">
+    </div>
+
+    <div id="commandModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Available Commands</h2>
+            <ul id="commandList"></ul>
+        </div>
+    </div>
+
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Settings</h2>
+            <div class="settings-container">
+                <label for="voiceSelect">custom:</label>
+                <select id="voiceSelect"></select>
+                <label for="languageSelect">Language:</label>
+                <select id="languageSelect"></select>
+                <label for="themeSelect">Theme:</label>
+                <select id="themeSelect">
+                    <option value="dark">Dark</option>
+                    <option value="light">Light</option>
+                    
+                </select>
+                <button id="saveSettings">Save Settings</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://sdk.scdn.co/spotify-player.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
+
